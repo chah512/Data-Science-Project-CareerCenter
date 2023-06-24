@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Center Platform</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="parent">
+        <div class="form">
+            <h1 class="animated-heading" style="color: #6b6868">Register </h1>
+
+            <form action="" method='POST'>
+                {% csrf_token %}
+                <label for="fname">First Name:</label>
+                <input type="text" placeholder="Enter your first name" name='fname'><br>
+
+                <label for="sname">Last Name:</label>
+                <input type="text" placeholder="Enter your last name" name='sname'><br>
+
+                <label for="uname">Username:</label>
+                <input type="text" placeholder="Create a username" name='uname'><br>
+
+                <label for="email">Email:</label>
+                <input type="email" placeholder="Enter your email" name='email'><br>
+
+                <label for="pass">Enter Password:</label>
+                <input type="password" placeholder="Create a password" name='pass'><br>
+
+                <label for="role">Role:</label>
+                <select name="role">
+                    <option value="student">Student</option>
+                    <option value="admin">Employer</option>
+                </select><br>
+
+                <center>   <button class="animate-button" type="submit">Submit</button></center>
+                <center> <p>Already have an account? <a class="animated-link" href="{% url 'login-page' %}">Login</a></p></center>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

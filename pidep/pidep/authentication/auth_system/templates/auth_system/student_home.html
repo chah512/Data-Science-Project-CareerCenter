@@ -1,0 +1,35 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Career Center Platform - Welcome</title>
+ {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}"></head>
+<body>
+  <header>
+    <div class="logo">
+            <img src="{% static 'img/Logo_ESPRIT_Ariana.jpg' %}" >
+    </div>
+    <nav>
+        <ul>
+        <li><a href="{% url 'home-page' %}">Home</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="{% url 'profile' %}">Profile</a></li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="welcome-container">
+      <h2>Welcome, <span>{{ user.username }}</span>!</h2>
+      <p>We're excited to help you take the next step in your career journey. Check out our latest job listings and explore the tools and resources we offer to help you stand out to employers.</p>
+      <a href="#" class="button">Get Started</a>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2023 Career Center Platform. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Career Center Platform - Welcome</title>
+ {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style2.css' %}"></head>
+
+    <link rel="stylesheet" href="{% static 'css/styleprofile.css' %}"></head>
+<body>
+  <header>
+    <div class="logo">
+            <img src="{% static 'img/Logo_ESPRIT_Ariana.jpg' %}" >
+    </div>
+    <nav>
+      <ul>
+        <li><a href="{% url 'home-page' %}">Home</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="{% url 'profile' %}">Profile</a></li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+  <div class="container">
+    <h1 class="title">LinkedIn Scraper</h1>
+    <form action="" method="POST" class="form">
+      {% csrf_token %}
+      <div class="input-group">
+        <label for="url" class="label">Enter a LinkedIn profile URL:</label>
+        <div class="control">
+          <input type="text" name="url" id="url" class="input" placeholder="e.g. https://www.linkedin.com/in/johndoe/">
+        </div>
+      </div>
+      <div class="button-group">
+        <button type="submit" class="button is-primary">Scrape Data</button>
+      </div>
+    </form>
+    <div class="results">
+      {% if name %}
+      <h2 class="subtitle">Full Name :{{ name }}</h2>
+      {% endif %}
+      {% if occupation %}
+      <p class="occupation">Occupation :{{ occupation }}</p>
+      {% endif %}
+      {% if headline %}
+      <p class="headline">Headline :{{ headline }}</p>
+      {% endif %}
+      {% if summary %}
+      <p class="summary">Summary : {{ summary }}</p>
+      {% endif %}
+    </div>
+  </div>
+</main>
+
+  <footer>
+    <p>&copy; 2023 Career Center Platform. All rights reserved.</p>
+  </footer>
+</body>
+</html>
